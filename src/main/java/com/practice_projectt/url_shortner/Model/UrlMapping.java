@@ -1,16 +1,14 @@
 package com.practice_projectt.url_shortner.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class UrlMapping {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String main_url;
+    @Column(name ="main_url")
+    private String mainUrl;
     private String short_url;
 
     public int getId() {
@@ -21,12 +19,12 @@ public class UrlMapping {
         this.id = id;
     }
 
-    public String getMain_url() {
-        return main_url;
+    public String mainUrl() {
+        return mainUrl;
     }
 
-    public void setMain_url(String main_url) {
-        this.main_url = main_url;
+    public void setMain_url(String mainUrl) {
+        this.mainUrl = mainUrl;
     }
 
     public String getShort_url() {
@@ -37,7 +35,7 @@ public class UrlMapping {
     public String toString() {
         return "UrlMapping{" +
                 "id=" + id +
-                ", main_url='" + main_url + '\'' +
+                ", main_url='" + mainUrl + '\'' +
                 ", short_url='" + short_url + '\'' +
                 '}';
     }

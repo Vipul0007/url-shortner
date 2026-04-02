@@ -4,4 +4,6 @@ import com.practice_projectt.url_shortner.Model.UrlMapping;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CRUDRepository extends JpaRepository<UrlMapping, Integer> {
+
+    public UrlMapping findByMainUrl(String mainUrl);
 }
